@@ -109,6 +109,22 @@ app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 app.add_handler(CommandHandler("start", start_command))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-print("BrandonGPT is online 💬")
-app.run_polling()
+# print("BrandonGPT is online 💬")
+# app.run_polling()
 
+# Webhook mode for Deployment
+PORT = int(os.environ.get("PORT", 8443))
+WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
+
+async def start_webhook():
+    await app.bot.set_webhook(f"{WEBHOOK_URL}/webhook")
+    await app.run_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        webhook_path="/webhook",
+    )
+
+if __name__ == "__main__":
+    import asyncio
+    print("BrandonGPT is online via webhook 🌐")
+    asyncio.run(start_webhook())
