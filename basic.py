@@ -1,5 +1,4 @@
 import os
-import asyncio
 from dotenv import load_dotenv
 from groq import Groq
 
@@ -126,6 +125,10 @@ async def start_webhook():
     )
 
 if __name__ == "__main__":
-    import asyncio
     print("BrandonGPT is online via webhook 🌐")
-    asyncio.run(start_webhook())
+    import nest_asyncio
+    import asyncio
+
+    nest_asyncio.apply()
+    asyncio.get_event_loop().run_until_complete(start_webhook())
+
