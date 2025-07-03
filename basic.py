@@ -124,11 +124,13 @@ async def start_webhook():
         webhook_url=f"{WEBHOOK_URL}/webhook"
     )
 
+async def main():
+    await start_webhook()
+
 if __name__ == "__main__":
-    print("BrandonGPT is online via webhook 🌐")
     import nest_asyncio
     import asyncio
 
     nest_asyncio.apply()
-    asyncio.get_event_loop().run_until_complete(start_webhook())
+    asyncio.run(main())
 
