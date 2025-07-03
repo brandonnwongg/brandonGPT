@@ -121,7 +121,8 @@ async def start_webhook():
     await app.run_webhook(
         listen="0.0.0.0",
         port=PORT,
-        webhook_path="/webhook",
+        url_path="webhook",
+        webhook_url=f"{WEBHOOK_URL}/webhook"
     )
 
 if __name__ == "__main__":
