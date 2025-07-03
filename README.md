@@ -20,4 +20,8 @@ Built with:
 
 - Voice Chat based on my Voice.
 
+## Resources:
+
+-[Simple Groq & Llama3 Telegram Chatbot by Bphil](https://www.youtube.com/watch?v=Q2I6Qwm-kvU)
+
 ## 🗣️ [Chat with BrandonGPT](https://t.me/brandonwong_bot)
