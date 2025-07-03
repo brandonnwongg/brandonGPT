@@ -20,4 +20,4 @@ Built with:
 
 - Voice Chat based on my Voice.
 
-Talk to me today: t.me/brandonwong_bot
+## 🗣️ [Chat with BrandonGPT](https://t.me/brandonwong_bot)
